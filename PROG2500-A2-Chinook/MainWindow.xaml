@@ -1,0 +1,75 @@
+﻿<Window x:Class="PROG2500_A2_Chinook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG2500_A2_Chinook"
+        mc:Ignorable="d"
+        Title="Chinook Music Store" Height="650" Width="900">
+    <Window.Resources>
+        <ResourceDictionary>
+            <BitmapImage x:Key="homeImage" UriSource="/images/home.png"/>
+            <BitmapImage x:Key="artistsImage" UriSource="/images/artists.png"/>
+            <BitmapImage x:Key="albumsImage" UriSource="/images/albums.png"/>
+            <BitmapImage x:Key="tracksImage" UriSource="/images/tracks.png"/>
+            <BitmapImage x:Key="invoiceImage" UriSource="/images/invoice.png"/>
+            <BitmapImage x:Key="catalogImage" UriSource="/images/catalog.png"/>
+
+            <Style TargetType="StackPanel" x:Key="stackStyle">
+                <Setter Property="Background" Value="Beige"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <StackPanel Style="{StaticResource stackStyle}">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="_Exit" Click="MenuItem_Click"/>
+            </MenuItem>
+            <MenuItem Header="Pages">
+                <MenuItem Header="_Home" Click="Home_Button_Click"/>
+                <MenuItem Header="_Albums" Click="Albums_Button_Click"/>
+                <MenuItem Header="_Artists" Click="Artists_Button_Click"/>
+                <MenuItem Header="_Tracks"  Click="Tracks_Button_Click"/>
+                <MenuItem Header="_Catalog" Click="Catalog_Button_Click"/>
+                <MenuItem Header="_Orders"  Click="Orders_Button_Click"/>
+            </MenuItem>
+        </Menu>
+        <ToolBar DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal" Height="40">
+                <Button x:Name="Home_Button" Click="Home_Button_Click" ToolTip="Home Page">
+                    <Image Source="{StaticResource homeImage}"/>
+                </Button>
+                <Button x:Name="Albums_Button" Click="Albums_Button_Click" ToolTip="Albums Page">
+                    <Image Source="{StaticResource albumsImage}"/>
+                </Button>
+                <Button x:Name="Artists_Button" Click="Artists_Button_Click" ToolTip="Artists Page">
+                    <Image Source="{StaticResource artistsImage}"/>
+                </Button>
+                <Button x:Name="Tracks_Button" Click="Tracks_Button_Click" ToolTip="Tracks Page">
+                    <Image Source="{StaticResource tracksImage}"/>
+                </Button>
+                <Button x:Name="Catalog_Button" Click="Catalog_Button_Click" ToolTip="Music Catalog Page">
+                    <Image Source="{StaticResource catalogImage}"/>
+                </Button>
+                <Button x:Name="Orders_Button" Click="Orders_Button_Click" ToolTip="Cutomers Orders Page">
+                    <Image Source="{StaticResource invoiceImage}"/>
+                </Button>
+            </StackPanel>
+        </ToolBar>
+        <Frame x:Name="mainFrame" Height="Auto" Width="Auto"
+               NavigationUIVisibility="Hidden"
+               DockPanel.Dock="Bottom">               
+        </Frame>
+    </StackPanel>
+</Window>
+
+    <!-- ATTRIBUTIONS
+        <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Dave Gandy - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/music-album" title="music album icons">Music album icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/google-play-music" title="google play music icons">Google play music icons created by Pixel perfect - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/discover" title="discover icons">Discover icons created by Smashicons - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/catalog" title="catalog icons">Catalog icons created by Freepik - Flaticon</a>
+    <a href="https://www.flaticon.com/free-icons/order" title="order icons">Order icons created by vectorsmarket15 - Flaticon</a>
+    -->
